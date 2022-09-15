@@ -15,4 +15,10 @@ public class Recurso {
     public void mostrar() {
         System.out.println(nombre);
     }
+
+    public Recurso(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    
 }

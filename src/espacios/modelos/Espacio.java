@@ -5,7 +5,9 @@
  */
 package espacios.modelos;
 
-import java.time.LocalDate;
+import java.util.ArrayList;
+import recursos.modelos.Composicion;
+import recursos.modelos.Recurso;
 
 /**
  *
@@ -15,6 +17,8 @@ public class Espacio {
     private String nombre;
     private int capacidad;
     private String tipo;
+    private ArrayList<Composicion> recursos = new ArrayList<>();
+    
 
     public Espacio(String nombre, int capacidad, String tipo) {
         this.nombre = nombre;
@@ -72,6 +76,10 @@ public class Espacio {
         System.out.println(nombre);
         System.out.println(capacidad);
         System.out.println(tipo);
+        for(Composicion c : this.recursos) {
+            c.getRecurso().mostrar();
+            System.out.println(c.getCantidad());
+        }
     }
     
     /**
@@ -85,5 +93,9 @@ public class Espacio {
     
     public void metodo2() {
         
+    }
+    
+    public void agregarRecurso(Composicion c) {
+        this.recursos.add(c);
     }
 }

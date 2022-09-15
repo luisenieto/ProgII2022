@@ -26,6 +26,7 @@ public class Docente {
         this.nombre = nombre;
         this.dni = dni;
         this.dedicacion = dedicacion;
+               
     }
     
     
