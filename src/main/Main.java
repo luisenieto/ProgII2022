@@ -5,9 +5,8 @@
  */
 package main;
 
-import asignaturas.modelos.Asignatura;
-import docentes.modelos.Docente;
-import espacios.modelos.Espacio;
+import asignaturas.vistas.VentanaAsignaturas;
+import asignaturas.vistas.VentanaAsignaturas2;
 
 /**
  *
@@ -15,45 +14,36 @@ import espacios.modelos.Espacio;
  */
 public class Main {
     public static void main(String[] args) {
-        
-        Espacio e1 = new Espacio("1-3-01", 50, "Aula");
-        Espacio e2 = new Espacio("1-3-15", 1550);
-        Espacio e3 = new Espacio("4-3-15");
-        //e1.nombre = null;
-        //e1.capacidad = -50;
-        //e1.tipo = null;
-        
-        //e1.mostrar1();
-        //e1.asignarNombre("1-3-01");
-        //e1.verNombre();
-        
-//        e1.asignarNombre("1-3-14");
-//        e1.asignarCapacidad(-10);
-//        e1.asignarTipo("Aula");
+//        JFrame ventana = new JFrame("Mi ventana");
+//        ventana.setSize(300, 300);
+//        ventana.setLocationRelativeTo(null);
+//        ventana.setResizable(false);
+//        ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        ventana.setVisible(true);
 
-//        e1.asignarNombre("A1");
-//        e3.mostrar();
+        VentanaAsignaturas ventana = new VentanaAsignaturas();
 
-        Docente d1 = new Docente(1, "Pérez", "Juan", 1, "Simple");
-        Docente d2 = new Docente(1, "Pérez", "Juan", 1, "Simple");
-        if (d1 == d2)
-            System.out.println("Iguales");
-        else
-            System.out.println("Distintoss");
-        //d.mostrar();
-        
-        Asignatura a = new Asignatura("E11", "Programación II");
-        //a.mostrar();
-        
-        //d.agregarAsignatura(a);
-        //d.mostrar();
-        //a.agregarDocente(d);
-        
-        //a.mostrar();
-        //d.mostrar();
+//        int opcion = JOptionPane.showConfirmDialog(null,
+// 		"¿Desea borrar el espacio especificado?", 
+// 		"Reservas", 
+// 		JOptionPane.YES_NO_OPTION);
         
         
-    }
-    
-    
+//        int opcion = JOptionPane.showOptionDialog(null,
+//            "¿Desea borrar el espacio especificado?", 
+//            "Reservas", JOptionPane.YES_NO_OPTION, 
+//            JOptionPane.QUESTION_MESSAGE, null, 
+//            new Object[] {"Sí", "No"}, "No"); 
+
+
+//        JOptionPane.showMessageDialog(null, 
+//                "No se puede borrar el espacio", 
+//                "Reservas", 
+// 		JOptionPane.INFORMATION_MESSAGE);
+        //System.out.println(opcion);
+        
+        VentanaAsignaturas2 ventana2 = new VentanaAsignaturas2(null);
+        
+        
+    }    
 }
