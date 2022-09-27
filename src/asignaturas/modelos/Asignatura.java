@@ -40,10 +40,10 @@ public class Asignatura {
     }
     
     public void agregarDocente(Docente d) {
-        if (!this.docentes.contains(d)) {
-            this.docentes.add(d);
-            d.agregarAsignatura(this);
-        }
+//        if (!this.docentes.contains(d)) {
+//            this.docentes.add(d);
+//            d.agregarAsignatura(this);
+//        }
     }
     
     public void mostrar() {

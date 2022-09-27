@@ -5,11 +5,13 @@
  */
 package main;
 
-import asignaturas.modelos.Asignatura;
 import docentes.modelos.Docente;
+import docentes.modelos.NoDocente;
+import docentes.modelos.Personal;
 import espacios.modelos.Espacio;
-import recursos.modelos.Composicion;
+import java.util.ArrayList;
 import recursos.modelos.Recurso;
+import turnos.modelos.Turno;
 
 /**
  *
@@ -17,53 +19,38 @@ import recursos.modelos.Recurso;
  */
 public class Main {
     public static void main(String[] args) {
+        ArrayList<Espacio> espacios = new ArrayList<>();
+        ArrayList<Personal> personal = new ArrayList<>();
         
         Espacio e1 = new Espacio("1-3-01", 50, "Aula");
+        Espacio e2 = new Espacio("1-3-01", 50, "Aula");
         
-        Recurso r1 = new Recurso("Pantalla");
-        Composicion c1 = new Composicion(r1, 1);
-        e1.agregarRecurso(c1);
+        if(!espacios.contains(e1))
+            espacios.add(e1);
+        if(!espacios.contains(e2))
+            espacios.add(e2);
         
-        Recurso r2 = new Recurso("Ventilador");
-        Composicion c2 = new Composicion(r2, 5);
-        e1.agregarRecurso(c2);
+//        for(Espacio e : espacios) {
+//            e.mostrar();
+//        }
         
-        e1.mostrar();
+        Personal p1 = new Docente(1, "Apellido1", "Nombre1", 1, "Simple");
+        Personal p2 = new Docente(2, "Apellido1", "Nombre1", 2, "Simple");
+        Personal p3 = new NoDocente(3, "Apellido3", "Nombre3", 3);
+        Personal p4 = new NoDocente(4, "Apellido1", "Nombre1", 4);
         
-//        Espacio e2 = new Espacio("1-3-15", 1550);
-//        Espacio e3 = new Espacio("4-3-15");
-        //e1.nombre = null;
-        //e1.capacidad = -50;
-        //e1.tipo = null;
+        if(!personal.contains(p1))
+            personal.add(p1);
+        if(!personal.contains(p2))
+            personal.add(p2);
+        if(!personal.contains(p3))
+            personal.add(p3);
+        if(!personal.contains(p4))
+            personal.add(p4);
         
-        //e1.mostrar1();
-        //e1.asignarNombre("1-3-01");
-        //e1.verNombre();
-        
-//        e1.asignarNombre("1-3-14");
-//        e1.asignarCapacidad(-10);
-//        e1.asignarTipo("Aula");
-
-//        e1.asignarNombre("A1");
-//        e3.mostrar();
-
-//        Docente d1 = new Docente(1, "Pérez", "Juan", 1, "Simple");
-//        Docente d2 = new Docente(1, "Pérez", "Juan", 1, "Simple");
-//        if (d1 == d2)
-//            System.out.println("Iguales");
-//        else
-//            System.out.println("Distintoss");
-        //d.mostrar();
-        
-        //Asignatura a = new Asignatura("E11", "Programación II");
-        //a.mostrar();
-        
-        //d.agregarAsignatura(a);
-        //d.mostrar();
-        //a.agregarDocente(d);
-        
-        //a.mostrar();
-        //d.mostrar();
+        for(Personal p : personal) {
+            System.out.println(p.queSoy());
+        }
         
         
     }

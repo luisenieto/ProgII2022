@@ -6,6 +6,7 @@
 package espacios.modelos;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import recursos.modelos.Composicion;
 import recursos.modelos.Recurso;
 
@@ -76,10 +77,10 @@ public class Espacio {
         System.out.println(nombre);
         System.out.println(capacidad);
         System.out.println(tipo);
-        for(Composicion c : this.recursos) {
-            c.getRecurso().mostrar();
-            System.out.println(c.getCantidad());
-        }
+//        for(Composicion c : this.recursos) {
+//            c.getRecurso().mostrar();
+//            System.out.println(c.getCantidad());
+//        }
     }
     
     /**
@@ -98,4 +99,35 @@ public class Espacio {
     public void agregarRecurso(Composicion c) {
         this.recursos.add(c);
     }
+    
+    public String toString() {
+        return this.nombre + " (" + this.capacidad + ") " + this.tipo;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 59 * hash + Objects.hashCode(this.nombre);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        Espacio other = (Espacio) obj;
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        return true;
+    }
+    
+    
 }
