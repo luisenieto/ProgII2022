@@ -17,10 +17,10 @@ public class Docente {
     private String apellido;
     private String nombre;
     private int dni;
-    private String dedicacion;
+    private Dedicacion dedicacion;    
     private ArrayList<Asignatura> asignaturas = new ArrayList<>();
 
-    public Docente(int legajo, String apellido, String nombre, int dni, String dedicacion) {
+    public Docente(int legajo, String apellido, String nombre, int dni, Dedicacion dedicacion) {
         this.legajo = legajo;
         this.apellido = apellido;
         this.nombre = nombre;
@@ -31,7 +31,7 @@ public class Docente {
     
     
     public void mostrar() {
-        System.out.println(apellido + ", " + nombre);
+        System.out.println(apellido + ", " + nombre + ", " + this.dedicacion);
         for(Asignatura a : this.asignaturas)
             a.mostrar();
     }
@@ -75,11 +75,11 @@ public class Docente {
         this.dni = dni;
     }
 
-    public String getDedicacion() {
+    public Dedicacion getDedicacion() {
         return dedicacion;
     }
 
-    public void setDedicacion(String dedicacion) {
+    public void setDedicacion(Dedicacion dedicacion) {
         this.dedicacion = dedicacion;
     }
 

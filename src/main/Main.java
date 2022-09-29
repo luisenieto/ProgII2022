@@ -5,8 +5,9 @@
  */
 package main;
 
-import asignaturas.vistas.VentanaAsignaturas;
-import asignaturas.vistas.VentanaAsignaturas2;
+import docentes.modelos.Dedicacion;
+import docentes.modelos.Docente;
+import docentes.vistas.VentanaMDocente;
 
 /**
  *
@@ -21,7 +22,7 @@ public class Main {
 //        ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //        ventana.setVisible(true);
 
-        VentanaAsignaturas ventana = new VentanaAsignaturas();
+        //VentanaAsignaturas ventana = new VentanaAsignaturas();
 
 //        int opcion = JOptionPane.showConfirmDialog(null,
 // 		"¿Desea borrar el espacio especificado?", 
@@ -39,11 +40,14 @@ public class Main {
 //        JOptionPane.showMessageDialog(null, 
 //                "No se puede borrar el espacio", 
 //                "Reservas", 
-// 		JOptionPane.INFORMATION_MESSAGE);
+//// 		JOptionPane.INFORMATION_MESSAGE);
         //System.out.println(opcion);
         
-        VentanaAsignaturas2 ventana2 = new VentanaAsignaturas2(null);
+        //VentanaAsignaturas2 ventana2 = new VentanaAsignaturas2(null);
         
-        
-    }    
+        Docente d = new Docente(1, "Apellido", "Nombre", 1, Dedicacion.MEDIA);
+        //d.mostrar();
+     
+        VentanaMDocente ventana = new VentanaMDocente(null, d);
+    }
 }
