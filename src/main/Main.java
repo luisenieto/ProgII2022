@@ -7,7 +7,10 @@ package main;
 
 import docentes.modelos.Dedicacion;
 import docentes.modelos.Docente;
-import docentes.vistas.VentanaMDocente;
+import docentes.modelos.ModeloTablaDocentes;
+import docentes.vistas.VentanaDocentes;
+import java.util.ArrayList;
+import javax.swing.UIManager;
 
 /**
  *
@@ -45,9 +48,40 @@ public class Main {
         
         //VentanaAsignaturas2 ventana2 = new VentanaAsignaturas2(null);
         
-        Docente d = new Docente(1, "Apellido", "Nombre", 1, Dedicacion.MEDIA);
+        Docente d1 = new Docente(1, "Apellido1", "Nombre1", 1, Dedicacion.MEDIA);
+        Docente d2 = new Docente(2, "Apellido2", "Nombre2", 2, Dedicacion.SIMPLE);
+        Docente d3 = new Docente(3, "Apellido3", "Nombre3", 3, Dedicacion.SIMPLE);
+        Docente d4 = new Docente(4, "Apellido4", "Nombre4", 4, Dedicacion.EXCLUSIVA);
+        Docente d5 = new Docente(5, "Apellido5", "Nombre5", 5, Dedicacion.MEDIA);
+        Docente d6 = new Docente(6, "Apellido6", "Nombre6", 6, Dedicacion.EXCLUSIVA);
+        ArrayList<Docente> docentes = new ArrayList<>();
+        docentes.add(d1);
+        docentes.add(d2);
+        docentes.add(d3);
+        docentes.add(d4);
+        docentes.add(d5);
+        docentes.add(d6);
         //d.mostrar();
      
-        VentanaMDocente ventana = new VentanaMDocente(null, d);
+        //VentanaMDocente ventana = new VentanaMDocente(null, d1);
+        asignarLookAndFeel("Nimbus");
+        ModeloTablaDocentes mtd = new ModeloTablaDocentes(docentes);
+        VentanaDocentes ventana = new VentanaDocentes(null, mtd);
     }
+    
+    public static void asignarLookAndFeel(String laf) {
+        try {
+            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                if (laf.equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                }
+            }
+        } catch (Exception e) {
+            try {
+                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            } 
+            catch (Exception e2) {
+            }
+        }
+    }    
 }
