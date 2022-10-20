@@ -5,28 +5,25 @@
  */
 package recursos.modelos;
 
+import interfaces.IGestorRecursos;
 import java.util.ArrayList;
 
 /**
  *
  * @author root
  */
-public class GestorRecursos {
+public class GestorRecursos2 implements IGestorRecursos {
     private ArrayList<Recurso> recursos = new ArrayList<>();
-    public static final String EXITO = "Se pudo crear el recurso";
-    public static final String REPETIDO = "Ya existe un recurso con ese nombre";
-    public static final String BLANCO = "No se puede crear un recurso con nombre en blanco";
-    public static final String NULO = "No se puede crear un recurso sin nombre";
     
-    private static GestorRecursos instancia;
+    private static GestorRecursos2 instancia;
     
-    private GestorRecursos() {
+    private GestorRecursos2() {
         
     }
     
-    public static GestorRecursos instanciar() {
+    public static GestorRecursos2 instanciar() {
         if (instancia == null)
-            instancia = new GestorRecursos();
+            instancia = new GestorRecursos2();
         return instancia;
     }
     
@@ -36,16 +33,16 @@ public class GestorRecursos {
                 Recurso r = new Recurso(nombre);
                 if (!this.recursos.contains(r)) {
                     this.recursos.add(r);  
-                    return EXITO;
+                    return IGestorRecursos.EXITO;
                 }
                 else
-                    return REPETIDO;
+                    return IGestorRecursos.REPETIDO;
             }
             else
-                return BLANCO;
+                return IGestorRecursos.BLANCO;
         }
         else
-            return NULO;
+            return IGestorRecursos.NULO;
     }
     
     public void mostrarRecursos() {

@@ -5,8 +5,9 @@
  */
 package main;
 
-import recursos.modelos.GestorRecursos;
-import recursos.modelos.Recurso;
+import interfaces.IGestorRecursos;
+import recursos.modelos.GestorRecursos1;
+import recursos.modelos.GestorRecursos2;
 
 /**
  *
@@ -14,21 +15,21 @@ import recursos.modelos.Recurso;
  */
 public class Main {
     public static void main(String[] args) {
-        GestorRecursos gr1 = GestorRecursos.instanciar();
-        GestorRecursos gr2 = GestorRecursos.instanciar();
-        GestorRecursos gr3 = gr1;
-        
+        IGestorRecursos gr1 = GestorRecursos2.instanciar();
+//        GestorRecursos gr2 = GestorRecursos.instanciar();
+//        GestorRecursos gr3 = gr1;
+//        
         System.out.println(gr1.nuevoRecurso("Ventilador"));
         System.out.println(gr1.nuevoRecurso("Ventilador"));
-        System.out.println(gr2.nuevoRecurso("Pantalla"));
+        System.out.println(gr1.nuevoRecurso("Pantalla"));
         System.out.println(gr1.nuevoRecurso(null));
         System.out.println(gr1.nuevoRecurso(""));
-        
+//        
         String resultado = gr1.nuevoRecurso("Proyector");
-        if (resultado.equals(GestorRecursos.EXITO))
+        if (resultado.equals(GestorRecursos1.EXITO))
             System.out.println("dsdsd");
         
-        gr3.mostrarRecursos();
+        gr1.mostrarRecursos();
         
         
     }        
