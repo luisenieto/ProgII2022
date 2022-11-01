@@ -6,37 +6,35 @@
 package recursos.modelos;
 
 import interfaces.IGestorRecursos;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
  * @author root
  */
-public class GestorRecursos2 implements IGestorRecursos {
-    private List<Recurso> recursos = new LinkedList<>();
+public class GestorRecursos3 implements IGestorRecursos {
+    private Set<Recurso> recursos = new HashSet<>();
     
-    private static GestorRecursos2 instancia;
+    private static GestorRecursos3 instancia;
     
-    private GestorRecursos2() {
+    private GestorRecursos3() {
         
     }
     
-    public static GestorRecursos2 instanciar() {
+    public static GestorRecursos3 instanciar() {
         if (instancia == null)
-            instancia = new GestorRecursos2();
+            instancia = new GestorRecursos3();
         return instancia;
     }
-    
+
+    @Override
     public String nuevoRecurso(String nombre) {
         if (nombre != null) {
             if (!nombre.isEmpty()) {
                 Recurso r = new Recurso(nombre);
-                if (!this.recursos.contains(r)) {
-                    this.recursos.add(r);
+                if (this.recursos.add(r))
                     return IGestorRecursos.EXITO;
-                }
                 else
                     return IGestorRecursos.REPETIDO;
             }
@@ -46,12 +44,11 @@ public class GestorRecursos2 implements IGestorRecursos {
         else
             return IGestorRecursos.NULO;
     }
-    
+
     @Override
     public void mostrarRecursos() {
-        Collections.sort(this.recursos);
-//        this.recursos.sort(c);
         for(Recurso r : this.recursos)
             r.mostrar();
     }
+    
 }

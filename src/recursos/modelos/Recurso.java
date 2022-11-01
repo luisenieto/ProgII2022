@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  * @author root
  */
-public class Recurso {
+public class Recurso implements Comparable<Recurso> {
     private String nombre;
     
     public void mostrar() {
@@ -24,6 +24,7 @@ public class Recurso {
 
     @Override
     public int hashCode() {
+        System.out.println("hashCode");
         int hash = 5;
         hash = 83 * hash + Objects.hashCode(this.nombre);
         return hash;
@@ -31,6 +32,7 @@ public class Recurso {
 
     @Override
     public boolean equals(Object obj) {
+        System.out.println("equals");
         if (this == obj) {
             return true;
         }
@@ -46,6 +48,15 @@ public class Recurso {
         }
         return true;
     }
+    
+    
+
+    @Override
+    public int compareTo(Recurso arg0) {
+        return this.nombre.compareTo(arg0.nombre) * (-1);
+    }
+
+    
     
     
 }
