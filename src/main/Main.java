@@ -25,11 +25,11 @@ public class Main {
 //        GestorRecursos gr2 = GestorRecursos.instanciar();
 //        GestorRecursos gr3 = gr1;
 //        
-        System.out.println(gr1.nuevoRecurso("Ventilador"));
-        System.out.println(gr1.nuevoRecurso("Ventilador"));
-        System.out.println(gr1.nuevoRecurso("Pantalla"));
-        System.out.println(gr1.nuevoRecurso(null));
-        System.out.println(gr1.nuevoRecurso(""));
+//        System.out.println(gr1.nuevoRecurso("Ventilador"));
+//        System.out.println(gr1.nuevoRecurso("Ventilador"));
+//        System.out.println(gr1.nuevoRecurso("Pantalla"));
+//        System.out.println(gr1.nuevoRecurso(null));
+//        System.out.println(gr1.nuevoRecurso(""));
 //        
 //        String resultado = gr1.nuevoRecurso("Proyector");
 //        if (resultado.equals(GestorRecursos1.EXITO))
@@ -37,13 +37,13 @@ public class Main {
         
 //        gr1.mostrarRecursos();
         
-        System.out.println(ge.nuevoEspacio("1-3-15", 50, "Aula"));
-        System.out.println(ge.nuevoEspacio("1-3-14", 100, "Aula"));
-        System.out.println(ge.nuevoEspacio("1-3-14", 100, "Aula"));
-        System.out.println(ge.nuevoEspacio("1-3-15", 0, "Aula"));
-        System.out.println(ge.nuevoEspacio("1-3-15", 50, ""));
-        System.out.println(ge.nuevoEspacio("1-3-15", 50, null));
-        System.out.println(ge.nuevoEspacio(null, 50, "Aula"));
+//        System.out.println(ge.nuevoEspacio("1-3-15", 50, "Aula"));
+//        System.out.println(ge.nuevoEspacio("1-3-14", 100, "Aula"));
+//        System.out.println(ge.nuevoEspacio("1-3-14", 100, "Aula"));
+//        System.out.println(ge.nuevoEspacio("1-3-15", 0, "Aula"));
+//        System.out.println(ge.nuevoEspacio("1-3-15", 50, ""));
+//        System.out.println(ge.nuevoEspacio("1-3-15", 50, null));
+//        System.out.println(ge.nuevoEspacio(null, 50, "Aula"));
         
         //ge.mostrarEspacios(new NombreComparator());
         //ge.mostrarEspacios(new CapacidadComparator());
@@ -64,9 +64,9 @@ public class Main {
 //        };
 //        ge.mostrarEspacios(cmp);
 
-//        Comparator<Espacio> cmp = (e1, e2) -> e1.verNombre().compareTo(e2.verNombre());
-//        ge.mostrarEspacios(cmp);
+        Comparator<Espacio> cmp = (e1, e2) -> e1.verNombre().compareTo(e2.verNombre());
+        ge.mostrarEspacios(cmp);
 //        cmp = (e1, e2) -> e1.verCapacidad() - e2.verCapacidad();
-        ge.mostrarEspacios((e1, e2) -> e1.verNombre().compareTo(e2.verNombre()));
+//        ge.mostrarEspacios((e1, e2) -> e1.verNombre().compareTo(e2.verNombre()));
     }        
 }

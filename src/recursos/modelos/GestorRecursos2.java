@@ -15,7 +15,7 @@ import java.util.List;
  * @author root
  */
 public class GestorRecursos2 implements IGestorRecursos {
-    private List<Recurso> recursos = new LinkedList<>();
+    private List<Recurso> recursos;// = new LinkedList<>();
     
     private static GestorRecursos2 instancia;
     
@@ -33,12 +33,14 @@ public class GestorRecursos2 implements IGestorRecursos {
         if (nombre != null) {
             if (!nombre.isEmpty()) {
                 Recurso r = new Recurso(nombre);
-                if (!this.recursos.contains(r)) {
-                    this.recursos.add(r);
-                    return IGestorRecursos.EXITO;
-                }
-                else
-                    return IGestorRecursos.REPETIDO;
+                
+                    if (!this.recursos.contains(r)) {
+                        this.recursos.add(r);
+                        return IGestorRecursos.EXITO;
+                    }
+                    else
+                        return IGestorRecursos.REPETIDO;
+                
             }
             else
                 return IGestorRecursos.BLANCO;
